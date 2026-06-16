@@ -86,6 +86,78 @@ export const puzzleLabels: Record<PuzzleId, string> = {
   what3words: "what3words",
 };
 
+const decoyCorrespondanceRows: CorrespondanceRow[] = [
+  { name: "Alice", place: "Salle 101" },
+  { name: "Baptiste", place: "Salle 102" },
+  { name: "Camille", place: "Salle 103" },
+  { name: "Dorian", place: "Salle 104" },
+  { name: "Élise", place: "Salle 105" },
+  { name: "Félix", place: "Salle 106" },
+  { name: "Garance", place: "Salle 107" },
+  { name: "Ibrahim", place: "Salle 108" },
+  { name: "Juliette", place: "Salle 109" },
+  { name: "Kylian", place: "Salle 110" },
+  { name: "Maëlle", place: "Salle 112" },
+  { name: "Nina", place: "Salle 113" },
+  { name: "Oscar", place: "Salle 115" },
+  { name: "Paul", place: "Salle 116" },
+  { name: "Quentin", place: "Salle 117" },
+  { name: "Romane", place: "Salle 118" },
+  { name: "Sacha", place: "Salle 119" },
+  { name: "Tom", place: "Salle 120" },
+  { name: "Ulysse", place: "Salle 121" },
+  { name: "Valentine", place: "Salle 122" },
+  { name: "William", place: "Salle 123" },
+  { name: "Yasmine", place: "Salle 124" },
+  { name: "Anaïs", place: "Salle 125" },
+  { name: "Bilel", place: "Salle 126" },
+  { name: "Célia", place: "Salle 128" },
+  { name: "Diego", place: "Salle 129" },
+  { name: "Ethan", place: "Salle 130" },
+  { name: "Fatou", place: "Salle 131" },
+  { name: "Gabriel", place: "Salle 132" },
+  { name: "Héloïse", place: "Salle 133" },
+  { name: "Ismaël", place: "Salle 134" },
+  { name: "Jeanne", place: "Salle 135" },
+  { name: "Karim", place: "Salle 136" },
+  { name: "Louise", place: "Salle 137" },
+  { name: "Mathis", place: "Salle 138" },
+  { name: "Nolan", place: "Salle 139" },
+  { name: "Océane", place: "Salle 140" },
+  { name: "Pierre", place: "Salle 141" },
+  { name: "Rayan", place: "Salle 142" },
+  { name: "Sofia", place: "Salle 143" },
+  { name: "Théo", place: "Salle 144" },
+  { name: "Violette", place: "Salle 145" },
+  { name: "Wassim", place: "Salle 146" },
+  { name: "Yaël", place: "Salle 147" },
+  { name: "Axel", place: "Salle 148" },
+  { name: "Brune", place: "Salle 149" },
+  { name: "Côme", place: "Salle 150" },
+  { name: "Daphné", place: "Salle 151" },
+  { name: "Eliott", place: "Salle 152" },
+  { name: "Flora", place: "Salle 153" },
+];
+
+function withDecoyRows(realRows: CorrespondanceRow[], offset = 0): CorrespondanceRow[] {
+  const decoys = [
+    ...decoyCorrespondanceRows.slice(offset),
+    ...decoyCorrespondanceRows.slice(0, offset),
+  ];
+  const rows: CorrespondanceRow[] = [];
+  let realIndex = 0;
+
+  decoys.forEach((decoy, index) => {
+    if (index % 4 === 0 && realIndex < realRows.length) {
+      rows.push(realRows[realIndex]);
+      realIndex += 1;
+    }
+    rows.push(decoy);
+  });
+
+  return [...rows, ...realRows.slice(realIndex)];
+}
+
 export const rallyeConfig: {
   groups: Record<GroupId, GroupConfig>;
   puzzles: PuzzleConfig;
@@ -176,10 +248,10 @@ export const rallyeConfig: {
       // Message affiché au début de cette énigme selon le groupe.
       // Modifiez ces textes pour donner des consignes différentes à l'équipe qui se déplace.
       introByGroup: {
-        "1": "Groupe 1 : écoutez le message sonore et transmettez uniquement le mot décodé.",
-        "2": "Groupe 2 : installez-vous dans un endroit calme avant de lancer l'audio.",
-        "3": "Groupe 3 : une personne écoute, les autres notent les sons courts et longs.",
-        "4": "Groupe 4 : comparez vos notes avant de proposer la réponse.",
+        "1": "Le groupe mobile doit trouver la zone pour décoder le morse. Énigme : quand la sonnerie libère les élèves, c'est là qu'ils vont prendre l'air, courir et discuter. Groupe 1 : écoutez le message sonore et transmettez uniquement le mot décodé.",
+        "2": "Le groupe mobile doit trouver la zone pour décoder le morse. Énigme : quand la sonnerie libère les élèves, c'est là qu'ils vont prendre l'air, courir et discuter. Groupe 2 : installez-vous dans un endroit calme avant de lancer l'audio.",
+        "3": "Le groupe mobile doit trouver la zone pour décoder le morse. Énigme : quand la sonnerie libère les élèves, c'est là qu'ils vont prendre l'air, courir et discuter. Groupe 3 : une personne écoute, les autres notent les sons courts et longs.",
+        "4": "Le groupe mobile doit trouver la zone pour décoder le morse. Énigme : quand la sonnerie libère les élèves, c'est là qu'ils vont prendre l'air, courir et discuter. Groupe 4 : comparez vos notes avant de proposer la réponse.",
       },
       // Les chemins doivent rester relatifs et ne jamais commencer par "/".
       audioByGroup: {
@@ -198,10 +270,10 @@ export const rallyeConfig: {
       instruction:
         "Observez l'image, comparez vos indices avec un autre groupe ou avec le document donné par le professeur.",
       introByGroup: {
-        "1": "Le morse est réussi : le groupe mobile doit aller à la bibliothèque récupérer un objet. Ensuite, montrez ce mot crypté à l'équipe qui possède l'indice des runes.",
-        "2": "Le morse est réussi : le groupe mobile doit aller à la bibliothèque récupérer un objet. Ensuite, demandez l'aide d'un autre groupe pour associer les symboles aux lettres.",
-        "3": "Groupe 3 : gardez l'image visible pendant que vous cherchez la correspondance.",
-        "4": "Groupe 4 : notez chaque lettre trouvée avant de saisir le mot final.",
+        "1": "Le groupe mobile doit se retrouver en salle 127 pour aider à décoder. Le morse est réussi : le groupe mobile doit aller à la bibliothèque récupérer un objet. Phrase à dire à la bibliothécaire : \"Il paraît que vous avez des indices pour retrouver le trésor d'un ancien directeur, peut-on le voir ?\" Ensuite, décrivez ce mot crypté à l'équipe qui possède l'indice des runes.",
+        "2": "Le groupe mobile doit se retrouver en salle 127 pour aider à décoder. Le morse est réussi : le groupe mobile doit aller à la bibliothèque récupérer un objet. Phrase à dire à la bibliothécaire : \"Il paraît que vous avez des indices pour retrouver le trésor d'un ancien directeur, peut-on le voir ?\" Ensuite, demandez l'aide d'un autre groupe pour associer les symboles aux lettres.",
+        "3": "Le groupe mobile doit se retrouver en salle 127 pour aider à décoder. Groupe 3 : gardez l'image visible pendant que vous cherchez la correspondance.",
+        "4": "Le groupe mobile doit se retrouver en salle 127 pour aider à décoder. Groupe 4 : notez chaque lettre trouvée avant de saisir le mot final.",
       },
       // Placez les images PNG dans public/assets/images/.
       // Les chemins doivent rester relatifs et ne jamais commencer par "/".
@@ -241,7 +313,7 @@ export const rallyeConfig: {
         "4": "Eva",
       },
       tablesByGroup: {
-        "1": [
+        "1": withDecoyRows([
           { name: "Sarah", place: "Salle 333" },
           { name: "Hugo", place: "Cafétéria" },
           { name: "Noé", place: "Salle des doyens" },
@@ -256,8 +328,8 @@ export const rallyeConfig: {
           { name: "Lucas", place: "Escalier au deuxième étage" },
           { name: "Inès", place: "Salle 333" },
           { name: "Yanis", place: "Salle de Jean-Philippe" },
-        ],
-        "2": [
+        ], 0),
+        "2": withDecoyRows([
           { name: "Manon", place: "Toilettes au troisième étage" },
           { name: "Emma", place: "Salle des doyens" },
           { name: "Clara", place: "Cafétéria" },
@@ -272,8 +344,8 @@ export const rallyeConfig: {
           { name: "Inès", place: "Casier 183" },
           { name: "Noé", place: "Salle 209" },
           { name: "Hugo", place: "Salle de Jean-Philippe" },
-        ],
-        "3": [
+        ], 13),
+        "3": withDecoyRows([
           { name: "Sarah", place: "Escaliers au -1" },
           { name: "Emma", place: "Salle 114" },
           { name: "Hugo", place: "Cafétéria" },
@@ -288,8 +360,8 @@ export const rallyeConfig: {
           { name: "Manon", place: "Toilettes au troisième étage" },
           { name: "Léa", place: "Salle 209" },
           { name: "Inès", place: "Salle 333" },
-        ],
-        "4": [
+        ], 26),
+        "4": withDecoyRows([
           { name: "Hugo", place: "Salle 209" },
           { name: "Sarah", place: "Salle 114" },
           { name: "Eva", place: "Infirmerie" },
@@ -304,7 +376,7 @@ export const rallyeConfig: {
           { name: "Malik", place: "Salle de Jean-Philippe" },
           { name: "Nathan", place: "Escalier au deuxième étage" },
           { name: "Lucas", place: "Toilettes au troisième étage" },
-        ],
+        ], 37),
       },
       successMessage: "La correspondance est correcte.",
     },
@@ -318,7 +390,7 @@ export const rallyeConfig: {
       introByGroup: {
         "1": "Animaux de départ, dans l'ordre :\nCheval\nRenard\nHibou\nTortue\nDauphin\nLion\nLapin",
         "2": "Animaux de départ, dans l'ordre :\nHibou\nLapin\nCheval\nRenard\nDauphin\nLion\nTortue",
-        "3": "Le morse est réussi : le groupe mobile doit aller à la bibliothèque récupérer un objet.\n\nAnimaux de départ, dans l'ordre :\nDauphin\nLapin\nLion\nHibou\nTortue\nRenard\nCheval",
+        "3": "Le morse est réussi : le groupe mobile doit aller à la bibliothèque récupérer un objet.\n\nPhrase à dire à la bibliothécaire : \"Il paraît que vous avez des indices pour retrouver le trésor d'un ancien directeur, peut-on le voir ?\"\n\nAnimaux de départ, dans l'ordre :\nDauphin\nLapin\nLion\nHibou\nTortue\nRenard\nCheval",
         "4": "Animaux de départ, dans l'ordre :\nRenard\nLapin\nLion\nHibou\nDauphin\nCheval\nCorbeau",
       },
       lockeeUrlsByGroup: {
@@ -340,7 +412,7 @@ export const rallyeConfig: {
         "1": "Le premier mot a été trouvé avec les cadenas : TRICOTONS. Le deuxième mot a été trouvé avec l'énigme des runes : REGARDONS. Il reste à trouver le dernier mot en résolvant l'énigme du puzzle.",
         "2": "Le premier mot a été trouvé avec les cadenas : TRICOTONS. Le deuxième mot a été trouvé avec l'énigme des runes : REGARDONS. Il reste à trouver le dernier mot en résolvant l'énigme du puzzle.",
         "3": "Le premier mot a été trouvé avec les cadenas : TRICOTONS. Le deuxième mot a été trouvé avec l'énigme des runes : REGARDONS. Il reste à trouver le dernier mot en résolvant l'énigme du puzzle.",
-        "4": "Le morse est réussi : le groupe mobile doit aller à la bibliothèque récupérer un objet. Le premier mot a été trouvé avec les cadenas : TRICOTONS. Le deuxième mot a été trouvé avec l'énigme des runes : REGARDONS. Il reste à trouver le dernier mot en résolvant l'énigme du puzzle.",
+        "4": "Le morse est réussi : le groupe mobile doit aller à la bibliothèque récupérer un objet. Phrase à dire à la bibliothécaire : \"Il paraît que vous avez des indices pour retrouver le trésor d'un ancien directeur, peut-on le voir ?\" Le premier mot a été trouvé avec les cadenas : TRICOTONS. Le deuxième mot a été trouvé avec l'énigme des runes : REGARDONS. Il reste à trouver le dernier mot en résolvant l'énigme du puzzle.",
       },
       linksByGroup: {
         "1": "https://what3words.com/",

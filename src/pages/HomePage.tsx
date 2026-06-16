@@ -19,8 +19,12 @@ export default function HomePage() {
           </p>
           <p>
             Chaque groupe suit sa propre piste d'énigmes pour remonter jusqu'au lieu
-            secret. La dernière épreuve utilise trois mots pour trouver l'endroit où
-            se cache la clé du coffre au trésor.
+            secret. Le groupe sera coupé en deux : une partie restera au QG, l'autre
+            partie sera mobile pour explorer les lieux indiqués.
+          </p>
+          <p>
+            Objectif final : trouver trois mots qui permettront de découvrir la clé
+            qui ouvre le coffre-fort.
           </p>
         </div>
         <h2>Choisissez votre groupe</h2>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { GroupId, rallyeConfig } from "../data/rallye.config";
 import { assetPath } from "../utils/assetPath";
 
@@ -15,6 +16,9 @@ export default function MorsePuzzle({ groupId }: MorsePuzzleProps) {
       <audio controls preload="none" src={assetPath(audioPath)}>
         Votre navigateur ne peut pas lire ce fichier audio.
       </audio>
+      <Link className="ghost-button help-button" to={`/groupe/${groupId}/aide-morse`}>
+        Aide Morse
+      </Link>
     </section>
   );
 }

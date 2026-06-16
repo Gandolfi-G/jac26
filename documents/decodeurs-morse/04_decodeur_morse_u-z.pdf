@@ -1,0 +1,59 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 841.89 595.28] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 913 >>
+stream
+q
+0.97 0.96 0.92 rg 0 0 841.89 595.28 re f
+0.08 0.08 0.08 rg
+BT /F1 36 Tf 265.43 505.00 Td (D\351codeur Morse 4/4) Tj ET
+BT /F1 22 Tf 362.87 465.00 Td (Lettres U-Z) Tj ET
+0.18 0.18 0.18 rg
+BT /F1 16 Tf 159.82 430.00 Td (Il faut r\351unir les 4 d\351codeurs pour pouvoir d\351coder tout le message.) Tj ET
+0.08 0.08 0.08 rg
+BT /F2 28 Tf 265.00 350.00 Td (U) Tj ET
+BT /F2 28 Tf 360.00 350.00 Td (..-) Tj ET
+BT /F2 28 Tf 265.00 306.00 Td (V) Tj ET
+BT /F2 28 Tf 360.00 306.00 Td (...-) Tj ET
+BT /F2 28 Tf 265.00 262.00 Td (W) Tj ET
+BT /F2 28 Tf 360.00 262.00 Td (.--) Tj ET
+BT /F2 28 Tf 265.00 218.00 Td (X) Tj ET
+BT /F2 28 Tf 360.00 218.00 Td (-..-) Tj ET
+BT /F2 28 Tf 265.00 174.00 Td (Y) Tj ET
+BT /F2 28 Tf 360.00 174.00 Td (-.--) Tj ET
+BT /F2 28 Tf 265.00 130.00 Td (Z) Tj ET
+BT /F2 28 Tf 360.00 130.00 Td (--..) Tj ET
+0.36 0.36 0.36 rg
+BT /F1 14 Tf 296.62 50.00 Td (Point = son court    Trait = son long) Tj ET
+Q
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000263 00000 n 
+0000000360 00000 n 
+0000000460 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1424
+%%EOF

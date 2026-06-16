@@ -7,22 +7,21 @@ endobj
 << /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 841.89 595.28] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
 endobj
 4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 5 0 obj
-<< /Length 353 >>
+<< /Length 317 >>
 stream
 q
-0.96 0.96 0.94 rg 0 0 595.28 841.89 re f
+0.96 0.96 0.94 rg 0 0 841.89 595.28 re f
 0.10 0.10 0.10 rg
-BT /F1 30 Tf 9.64 464.94 Td (No\351 est venu chercher un pansement apr\350s) Tj ET
-BT /F1 30 Tf 16.84 420.94 Td (la r\351cr\351ation. Transmettez ce pr\351nom au) Tj ET
-BT /F1 30 Tf 276.04 376.94 Td (QG.) Tj ET
+BT /F1 30 Tf 24.94 319.64 Td (No\351 est venu chercher un pansement apr\350s la r\351cr\351ation.) Tj ET
+BT /F1 30 Tf 219.34 275.64 Td (Transmettez ce pr\351nom au QG.) Tj ET
 0.36 0.36 0.36 rg
-BT /F1 11 Tf 242.20 42.00 Td (\300 placer : Infirmerie) Tj ET
+BT /F1 11 Tf 365.50 42.00 Td (\300 placer : Infirmerie) Tj ET
 Q
 endstream
 endobj
@@ -37,5 +36,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-754
+718
 %%EOF

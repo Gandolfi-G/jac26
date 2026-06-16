@@ -65,13 +65,22 @@ def centered_text_line(text: str, font: str, size: int, y: float, page_width: fl
     return text_line(text, font, size, x, y)
 
 
+def phrase_lines(phrase: str) -> list[str]:
+    instruction = "Transmettez ce prénom au QG."
+    if instruction not in phrase:
+        return textwrap.wrap(phrase, width=62)
+
+    story = phrase.replace(instruction, "").strip()
+    return [*textwrap.wrap(story, width=62), instruction]
+
+
 def make_pdf(path: Path, lieu: str, phrase: str) -> None:
-    width = 595.28
-    height = 841.89
-    lines = textwrap.wrap(phrase, width=42)
+    width = 841.89
+    height = 595.28
+    lines = phrase_lines(phrase)
     content_lines = [
         "q",
-        "0.96 0.96 0.94 rg 0 0 595.28 841.89 re f",
+        f"0.96 0.96 0.94 rg 0 0 {width:.2f} {height:.2f} re f",
         "0.10 0.10 0.10 rg",
     ]
 
@@ -93,9 +102,9 @@ def make_pdf(path: Path, lieu: str, phrase: str) -> None:
         b"<< /Type /Catalog /Pages 2 0 R >>",
         b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
         (
-            b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] "
-            b"/Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>"
-        ),
+            f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 {width:.2f} {height:.2f}] "
+            "/Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>"
+        ).encode("ascii"),
         b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>",
         f"<< /Length {len(content)} >>\nstream\n".encode("ascii") + content + b"\nendstream",
     ]

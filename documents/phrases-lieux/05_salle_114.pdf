@@ -7,21 +7,21 @@ endobj
 << /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 841.89 595.28] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
 endobj
 4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 5 0 obj
-<< /Length 293 >>
+<< /Length 295 >>
 stream
 q
-0.96 0.96 0.94 rg 0 0 595.28 841.89 re f
+0.96 0.96 0.94 rg 0 0 841.89 595.28 re f
 0.10 0.10 0.10 rg
-BT /F1 30 Tf -4.76 442.94 Td (Emma a rendu un livre avec une page pli\351e.) Tj ET
-BT /F1 30 Tf 96.04 398.94 Td (Transmettez ce pr\351nom au QG.) Tj ET
+BT /F1 30 Tf 118.55 319.64 Td (Emma a rendu un livre avec une page pli\351e.) Tj ET
+BT /F1 30 Tf 219.34 275.64 Td (Transmettez ce pr\351nom au QG.) Tj ET
 0.36 0.36 0.36 rg
-BT /F1 11 Tf 244.84 42.00 Td (\300 placer : Salle 114) Tj ET
+BT /F1 11 Tf 368.14 42.00 Td (\300 placer : Salle 114) Tj ET
 Q
 endstream
 endobj
@@ -36,5 +36,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-694
+696
 %%EOF

@@ -332,6 +332,39 @@ audio {
   width: 100%;
 }
 
+.help-button {
+  justify-self: start;
+}
+
+.morse-help-word {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(82px, 1fr));
+}
+
+.morse-help-letter {
+  background: #ffffff;
+  border: 1px solid color-mix(in srgb, var(--theme-primary) 28%, #d8e0eb);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.35rem;
+  min-height: 88px;
+  padding: 0.85rem;
+  text-align: center;
+}
+
+.morse-help-letter strong {
+  color: var(--theme-dark);
+  font-size: 1.45rem;
+}
+
+.morse-help-letter span {
+  color: #202a3d;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
 .lockee-frame {
   background: #ffffff;
   border: 0;
