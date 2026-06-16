@@ -268,7 +268,7 @@ export const rallyeConfig: {
       type: "runes",
       description: "",
       instruction:
-        "Observez l'image, comparez vos indices avec un autre groupe ou avec le document donné par le professeur.",
+        "Observez l'image et utilisez l'objet récupéré dans le casier pour décoder le mot.",
       introByGroup: {
         "1": "Le groupe mobile doit se retrouver en salle 127 pour aider à décoder. Le morse est réussi : le groupe mobile doit aller à la bibliothèque récupérer un objet. Phrase à dire à la bibliothécaire : \"Il paraît que vous avez des indices pour retrouver le trésor d'un ancien directeur, peut-on le voir ?\" Ensuite, décrivez ce mot crypté à l'équipe qui possède l'indice des runes.",
         "2": "Le groupe mobile doit se retrouver en salle 127 pour aider à décoder. Le morse est réussi : le groupe mobile doit aller à la bibliothèque récupérer un objet. Phrase à dire à la bibliothécaire : \"Il paraît que vous avez des indices pour retrouver le trésor d'un ancien directeur, peut-on le voir ?\" Ensuite, demandez l'aide d'un autre groupe pour associer les symboles aux lettres.",

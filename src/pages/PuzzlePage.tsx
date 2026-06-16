@@ -22,6 +22,7 @@ export default function PuzzlePage() {
   const { currentPuzzleId, currentPuzzleIndex, completePuzzle, isFinished, progress, selectGroup } =
     useRallyeProgress();
   const [feedback, setFeedback] = useState<string | null>(null);
+  const [showLibraryModal, setShowLibraryModal] = useState(false);
 
   useEffect(() => {
     setFeedback(null);
@@ -49,6 +50,8 @@ export default function PuzzlePage() {
   const puzzle = rallyeConfig.puzzles[currentPuzzleId];
   const expectedAnswer = group.answers[currentPuzzleId];
   const isWhat3Words = currentPuzzleId === "what3words";
+  const libraryInstruction =
+    "Le groupe mobile doit aller à la bibliothèque récupérer un objet. Phrase à dire à la bibliothécaire : \"Il paraît que vous avez des indices pour retrouver le trésor d'un ancien directeur, peut-on le voir ?\"";
 
   function renderPuzzle(puzzleId: PuzzleId, activeGroupId: GroupId) {
     switch (puzzleId) {
@@ -67,6 +70,20 @@ export default function PuzzlePage() {
     }
   }
 
+  function finishPuzzle(puzzleId: PuzzleId) {
+    completePuzzle(puzzleId);
+
+    window.setTimeout(() => {
+      const nextCompletedCount = progress.completedPuzzleIds.includes(puzzleId)
+        ? progress.completedPuzzleIds.length
+        : progress.completedPuzzleIds.length + 1;
+
+      if (nextCompletedCount >= group.puzzleOrder.length) {
+        navigate(`/groupe/${groupId}/fin`);
+      }
+    }, 450);
+  }
+
   function handleSubmit(answer: string) {
     if (!currentPuzzleId) {
       return;
@@ -78,17 +95,17 @@ export default function PuzzlePage() {
     }
 
     setFeedback(puzzle.successMessage);
-    completePuzzle(currentPuzzleId as PuzzleId);
+    if (currentPuzzleId === "morse") {
+      setShowLibraryModal(true);
+      return;
+    }
 
-    window.setTimeout(() => {
-      const nextCompletedCount = progress.completedPuzzleIds.includes(currentPuzzleId)
-        ? progress.completedPuzzleIds.length
-        : progress.completedPuzzleIds.length + 1;
+    finishPuzzle(currentPuzzleId);
+  }
 
-      if (nextCompletedCount >= group.puzzleOrder.length) {
-        navigate(`/groupe/${groupId}/fin`);
-      }
-    }, 450);
+  function confirmLibraryDeparture() {
+    setShowLibraryModal(false);
+    finishPuzzle("morse");
   }
 
   return (
@@ -123,6 +140,24 @@ export default function PuzzlePage() {
           />
         ) : null}
       </article>
+
+      {showLibraryModal ? (
+        <div className="modal-backdrop" role="presentation">
+          <section
+            aria-labelledby="library-modal-title"
+            aria-modal="true"
+            className="library-modal"
+            role="dialog"
+          >
+            <span className="step-pill">Mission importante</span>
+            <h2 id="library-modal-title">Allez voir la bibliothécaire</h2>
+            <p>{libraryInstruction}</p>
+            <button className="primary-button" type="button" onClick={confirmLibraryDeparture}>
+              Nous y allons
+            </button>
+          </section>
+        </div>
+      ) : null}
     </main>
   );
 }
