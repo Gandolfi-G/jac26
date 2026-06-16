@@ -13,7 +13,7 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 5 0 obj
-<< /Length 315 >>
+<< /Length 302 >>
 stream
 q
 0.96 0.96 0.94 rg 0 0 841.89 595.28 re f
@@ -21,7 +21,7 @@ q
 BT /F1 30 Tf 60.94 319.64 Td (Clara a pos\351 une question juste avant la sonnerie.) Tj ET
 BT /F1 30 Tf 219.34 275.64 Td (Transmettez ce pr\351nom au QG.) Tj ET
 0.36 0.36 0.36 rg
-BT /F1 11 Tf 333.82 42.00 Td (\300 placer : Salle de Jean-Philippe) Tj ET
+BT /F1 11 Tf 368.14 42.00 Td (\300 placer : Salle 308) Tj ET
 Q
 endstream
 endobj
@@ -36,5 +36,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-716
+703
 %%EOF
