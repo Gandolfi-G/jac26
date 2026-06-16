@@ -255,10 +255,10 @@ export const rallyeConfig: {
       },
       // Les chemins doivent rester relatifs et ne jamais commencer par "/".
       audioByGroup: {
-        "1": "assets/audio/morse_LAREPONSEESTSIXSEVEN.wav",
-        "2": "assets/audio/morse_QUIESTLEPLUSGRANDPIRATE.wav",
-        "3": "assets/audio/morse_ILVADEVENIRHOKAGE.wav",
-        "4": "assets/audio/morse_LENOMDETONCYCLE.wav",
+        "1": "assets/audio/morse_sixseven.wav",
+        "2": "assets/audio/morse_luffy.wav",
+        "3": "assets/audio/morse_naruto.wav",
+        "4": "assets/audio/morse_foron.wav",
       },
       successMessage: "Message décodé. Vous pouvez continuer.",
     },

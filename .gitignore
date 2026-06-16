@@ -5,3 +5,5 @@ dist/
 npm-debug.log*
 *.tsbuildinfo
 *:Zone.Identifier
+__pycache__/
+*.pyc
